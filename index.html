@@ -32,14 +32,61 @@
             </nav>
         </header>
             <section>
-                <div class="container">
+                <div class="container py-5">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-lg-8">
                             <div>
-                                Contenuto Form
+                                <h2>Richiesta preventivo</h2>
+                                <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
                             </div>
+                            <form id="form-preventivo" class="row g-3">
+                                <div class="col-12">
+                                    <label for="nome" class="form-label">Nome</label> <!--Label è l'etichetta--> 
+                                    <input id="nome" type="text" class="form-control"> <!--Dove inseriamo i dati del form-->
+                                </div>
+                                <div class="col-12">
+                                    <label for="cognome" class="form-label">Cognome</label>
+                                    <input id="cognome" type="text" class="form-control">
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input id="email" type="email" class="form-control">
+                                </div>
+                                <div class="col-12">
+                                    <label for="tipoLavoro" class="form-label">Tipo di Lavoro</label>
+                                    <select class="form-select" id="mansioni" name="mansioni" required>
+                                        <option value="" selected disabled>Seleziona il tipo di lavoro</option>
+                                        <option value="backend">Backend Development</option>
+                                        <option value="frontend">Frontend Development</option>
+                                        <option value="analysis">Project Analysis</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="my-2" for="floatingTextarea">Textarea con Bootstrap 5</label>
+                                    <textarea type="text" id="floatingTextarea" class="form-control"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="promo" class="form-label">Codice Promozionale (opzionale)</label>
+                                    <input type="text" id="promo" name="promo" class="form-control">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                                    <label class="form-check-label" for="gridCheck">Accetto la Privacy Policy</label>
+                                    </div>
+                                </div>
+                                <div class="row py-5">
+                                    <div class="col-12 col-md-6 text-center mb-3">
+                                        <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                                    </div>
+                                    <div class="col-12 col-md-6 text-center">
+                                        <h5 class="fw-bold">Prezzo Finale</h5>
+                                        <h4 id="prezzoFinale" name="prezzoFinale">--,--</h4>
+                                    </div>
+                                </div> 
+                            </form>
                         </div>
-                        <div class="col-4">
+                        <div class="col-lg-4">
                             Card
                         </div>
                     </div>
