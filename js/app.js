@@ -17,35 +17,37 @@ formElement.addEventListener('submit', function (event) {    //siccome è un for
 
     //prendo gli elementi del form tipologia del lavoro e codice promozionale
     const tipoLavoro = document.getElementById('mansioni').value //.value se non inserisce questo dato l'utente non potrà andare avanti
-    const codicePromo = document.getElementById('promo')
+    const codicePromo = document.getElementById('promo').value
 
 
     //variabile con condizionali in base alla mansione scelta dall'utente
     let prezzoOrario = 0
     
-    if (tipoLavoro === "backend") {
+    if (tipoLavoro === 'backend') {
             prezzoOrario = 20.5
-        } else if (tipoLavoro === "frontend") {
+        } else if (tipoLavoro === 'frontend') {
             prezzoOrario = 15.3
-        } else if (tipoLavoro === "analysis") {
+        } else if (tipoLavoro === 'analysis') {
             prezzoOrario = 33.6
         } else {
-            alert("Per favore seleziona un tipo di lavoro valido.")
-            return;  //return per fermare l'esecuzione della funzione e restituire un valore al punto in cui la funzione è stata evocata
+            return;
         }
+        
 
-    
         //risultato del prezzo della tipologia del lavoro X le ore di lavoro
         let prezzo = prezzoOrario * oreLavoro  //dichiarato con let perchè l'utente potrebbe inserire dei codici promozionali
 
-        const codiciValidi = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24',]  // array di stringhe 
+
+
+        const codiciValidi = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24']  // array di stringhe 
 
         //condizioni per verificare se il codice inserito è valido 
-        if (codicePromo !== '') { //se codicePromo è diverso (!==) da un testo vuoto e quindi l'utente ha scritto qualcosa diciamo che (condizione annidata con if)
+       if (codicePromo !== '') {  //se il codice promo è diverso (!==) da un testo vuoto diciamo che
             if (codiciValidi.includes(codicePromo)) {
-                prezzo = (prezzo * 75) / 100 //formula per applicare lo sconto del 25% sul prezzo      
+                prezzo = (prezzo * 75) / 100 // Applichiamo lo sconto del 25%
+                alert('Hai dirtto ad uno sconto del 25%')
             } else {
-                alert("Se non hai inserito un codice promozionale o il codice inserito non è corretto, verrà applicato il prezzo pieno.")
+                alert("Il codice inserito non è corretto. Verrà caclolato il prezzo intero")
             }
         }
 
