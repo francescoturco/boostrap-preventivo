@@ -45,7 +45,7 @@ formElement.addEventListener('submit', function (event) {    //siccome è un for
             if (codiciValidi.includes(codicePromo)) {
                 prezzo = (prezzo * 75) / 100 //formula per applicare lo sconto del 25% sul prezzo      
             } else {
-                alert("Codice promozionale non valido. Controlla l'inserimento corretto. Verrà applicato il prezzo pieno.")
+                alert("Se non hai inserito un codice promozionale o il codice inserito non è corretto, verrà applicato il prezzo pieno.")
             }
         }
 
