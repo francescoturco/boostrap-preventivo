@@ -16,7 +16,7 @@ formElement.addEventListener('submit', function (event) {    //siccome è un for
 
 
     //prendo gli elementi del form tipologia del lavoro e codice promozionale
-    const tipoLavoro = document.getElementById('mansioni').value //.value se non inserisce questo dato l'utente non potrà andare avanti
+    const tipoLavoro = document.getElementById('tipoLavoro').value //.value se non inserisce questo dato l'utente non potrà andare avanti
     const codicePromo = document.getElementById('promo').value
 
 
